@@ -1,0 +1,359 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* Display */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif ;
+    color: #ffff;
+}
+/* display body */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://i.imgur.com/YoNk9KE.jpg");
+    background-size: cover;
+    text-shadow: 2px 2px 8px #000;
+}
+/* display body light mode */
+body.light{
+    background-image: url("https://i.imgur.com/8opX5xR.jpg");
+    background-size: cover;
+    text-shadow: 2px 2px 4px #000;
+}
+/* transparency container light mode */
+body.light .calculator{
+    background: rgba(237, 250, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px); 
+} 
+/* hover span light mode */
+body.light span:hover{
+    background: rgba(237, 250, 255, 0.7);
+}
+/* logo H */
+#link{
+    position: fixed;
+    bottom: -15px;
+    right: 15px;
+    width: 70px;
+    cursor: pointer;
+}
+/* container */
+.calculator{
+    position: relative;
+    display: grid;
+}
+/* container hover */
+.calculator:hover{
+-webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.2);
+}
+/* container display */
+.calculator .value{
+    grid-column: span 4;
+    height: 100px;
+    text-align: right;
+    border: 0.5px solid rgba(0,0,0, .1);
+    outline: none;
+    padding: 10px;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px #000;
+    background: rgba(237, 250, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px); 
+}
+/* blocs */
+span{
+    display: grid;
+    width: 60px;
+    height: 60px;
+    place-items: center;
+    border: 0.5px solid rgba(0,0,0, .1);
+    background: #edfaff1a;
+    -webkit-backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px);
+    cursor: pointer; 
+}
+/* hover blocs */
+span:hover{
+    background: transparent;
+}
+/* blocs when pressed */
+span:active{
+    background-color: #6edb4359;
+    -webkit-backdrop-filter: blur(3px); 
+    backdrop-filter: blur(3px);
+}
+/* bloc C */
+span.clear{
+    grid-column: span 2;
+    width: 120px;
+    backdrop-filter: blur(1px) saturate(100%);
+    -webkit-backdrop-filter: blur(1px) saturate(100%);
+    font-size: 28px;
+}
+/* bloc C when pressed */
+span.clear:active{
+    background-color: #ff2e7780;
+    backdrop-filter: blur(1px) saturate(100%);
+    -webkit-backdrop-filter: blur(1px) saturate(100%);
+}
+/* bloc + */
+span.plus{
+    grid-row: span 2;
+    height: 120px;
+    font-size: 32px;
+}
+/* bloc = */
+span.equal{
+    -webkit-backdrop-filter: blur(3px); 
+    backdrop-filter: blur(3px);
+}
+/* bloc equal when pressed */
+span.equal:active{
+    backdrop-filter: blur(1px) saturate(100%);
+    -webkit-backdrop-filter: blur(1px) saturate(100%);
+    background-color: #0384bc80;
+}
+/* light mode blocs when pressed */
+body.light span:active{
+    background-color: #6edb4359;
+    -webkit-backdrop-filter: blur(3px); 
+    backdrop-filter: blur(3px);
+}
+/* light mode bloc C */
+body.light span.clear{
+    grid-column: span 2;
+    width: 120px;
+    backdrop-filter: blur(1px) saturate(100%);
+    -webkit-backdrop-filter: blur(1px) saturate(100%);
+    font-size: 28px;
+}
+/* light mode bloc C when pressed */
+body.light span.clear:active{
+    background-color: #ff2e7780;
+    backdrop-filter: blur(1px) saturate(100%);
+    -webkit-backdrop-filter: blur(1px) saturate(100%);
+}
+/* light mode bloc + */
+body.light span.plus{
+    grid-row: span 2;
+    height: 120px;
+    font-size: 32px;
+}
+/* light mode bloc = */
+body.light span.equal{
+    -webkit-backdrop-filter: blur(3px); 
+    backdrop-filter: blur(3px);
+}
+/* light mode bloc = when pressed */
+body.light span.equal:active{
+    backdrop-filter: blur(1px) saturate(100%);
+    -webkit-backdrop-filter: blur(1px) saturate(100%);
+    background-color: #0384bc80;
+}
+/* From cssbuttons.io */
+.wrapper {
+    perspective: 500px;
+    transform: rotatex(10deg);
+    animation: rotateAngle 6s linear infinite;
+    position:absolute;
+    top: 20px;
+    left: 20px;
+}
+/* button light mode when pressed */
+.wrapper button {
+    display: none;
+}
+/* button light mode */
+.wrapper button:nth-child(1) {
+    display: block;
+}
+/* button dark mode when pressed */
+body.light .wrapper button:nth-child(1) {
+    display: none;
+}
+/* button dark mode */
+body.light .wrapper button:nth-child(2) {
+    display: block;
+}
+/* button effect */
+button {
+    margin: 0.1em 0;
+    padding: 0.1em 0.5em;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-radius: 1em;
+    mix-blend-mode: color-dodge;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    font-size: 20px;
+}
+
+button:before, button:after {
+    --z: 0px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    mix-blend-mode: inherit;
+    border-radius: inherit;
+    transform-style: preserve-3d;
+    transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
+}
+
+button span {
+    mix-blend-mode: none;
+    display: block;
+}
+   
+button:after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+   
+button:before {
+    background-color: rgba(255, 254, 254, 0.5);
+}
+ /* hover button */  
+button:hover {
+    background-color: transparent;
+    transition: background 0.3s 0.1s;
+}
+   
+button:hover:before {
+    --z: 0.04;
+    animation: translateWobble 2.2s ease forwards;
+}
+   
+button:hover:after {
+    --z: -0.06;
+    animation: translateWobble 2.2s ease forwards;
+}
+/* animation button */
+   @keyframes rotateAngle {
+    0% {
+     transform: rotateY(0deg) rotateX(10deg);
+     -webkit-animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+     animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    }
+   
+    25% {
+     transform: rotateY(20deg) rotateX(10deg);
+    }
+   
+    50% {
+     transform: rotateY(0deg) rotateX(10deg);
+     -webkit-animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+     animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+    }
+   
+    75% {
+     transform: rotateY(-20deg) rotateX(10deg);
+    }
+   
+    100% {
+     transform: rotateY(0deg) rotateX(10deg);
+    }
+}
+   
+   @keyframes translateWobble {
+    0% {
+     opacity: 0;
+     transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
+    }
+   
+    16% {
+     transform: translate3d(calc(var(--z) * 160px), calc(var(--z) * 160px), calc(var(--z) * 160px));
+    }
+   
+    28% {
+     opacity: 1;
+     transform: translate3d(calc(var(--z) * 70px), calc(var(--z) * 70px), calc(var(--z) * 70px));
+    }
+   
+    44% {
+     transform: translate3d(calc(var(--z) * 130px), calc(var(--z) * 130px), calc(var(--z) * 130px));
+    }
+   
+    59% {
+     transform: translate3d(calc(var(--z) * 85px), calc(var(--z) * 85px), calc(var(--z) * 85px));
+    }
+   
+    73% {
+     transform: translate3d(calc(var(--z) * 110px), calc(var(--z) * 110px), calc(var(--z) * 110px));
+    }
+   
+    88% {
+     opacity: 1;
+     transform: translate3d(calc(var(--z) * 90px), calc(var(--z) * 90px), calc(var(--z) * 90px));
+    }
+   
+    100% {
+     opacity: 1;
+     transform: translate3d(calc(var(--z) * 100px), calc(var(--z) * 100px), calc(var(--z) * 100px));
+    }
+}
+/* tooltip container */
+   .tooltipcalc {
+    position: absolute;
+    display: inline-block;
+}
+/* text tolltip container */
+  .tooltipcalc .tooltipcalctext {
+    visibility: hidden;
+    width: 247px;
+    height: 35px;
+    font-size: 24px;
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    border: 2px solid rgba(0,0,0, .1);
+    position: absolute;
+    z-index: 1;
+    top: -75px;
+    left: 0px;
+    text-shadow: 2px 2px 4px #000;
+    background: rgba(237, 250, 255, 0.1);
+    -webkit-backdrop-filter: blur(3px); 
+    backdrop-filter: blur(3px);
+}
+/* hover text tolltip container */  
+  .tooltipcalc:hover .tooltipcalctext {
+    visibility: visible;
+}
+/*tooltip logo */
+   .tooltip {
+    position: absolute;
+    display: inline-block;
+}
+/* tooltipe text logo */  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    height: 25px;
+    font-size: 8px;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    text-shadow: 2px 2px 4px #000;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 195px;
+    left: 590px;
+}
+/* hover tooltip logo */  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
