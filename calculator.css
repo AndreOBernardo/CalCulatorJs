@@ -16,6 +16,7 @@ body{
     min-height: 100vh;
     background-image: url("https://i.imgur.com/YoNk9KE.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     text-shadow: 2px 2px 8px #000;
 }
 /* display body light mode */
@@ -92,7 +93,7 @@ span:active{
 /* bloc C */
 span.clear{
     grid-column: span 2;
-    width: 120px;
+    width: 120.5px;
     backdrop-filter: blur(1px) saturate(100%);
     -webkit-backdrop-filter: blur(1px) saturate(100%);
     font-size: 28px;
